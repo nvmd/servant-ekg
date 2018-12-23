@@ -17,9 +17,9 @@ source-repository HEAD
 library
   exposed-modules:     Servant.Ekg
   hs-source-dirs:      lib
-  build-depends:       base >=4.7 && < 4.10
+  build-depends:       base >=4.7 && <5
                      , ekg-core
-                     , servant > 0.5 && < 0.10
+                     , servant
                      , http-types
                      , text
                      , time
@@ -33,7 +33,7 @@ test-suite spec
   default-language: Haskell2010
   hs-source-dirs: test
   main-is: Spec.hs
-  build-depends:      base == 4.*
+  build-depends:      base >=4.7 && <5
                     , aeson
                     , ekg
                     , ekg-core
@@ -44,8 +44,8 @@ test-suite spec
                     , http-client
                     , text
                     , wai
-                    , warp >= 3.2.4 && < 3.3
-                    , hspec == 2.*
+                    , warp
+                    , hspec
                     , unordered-containers
                     , transformers
 
@@ -54,7 +54,7 @@ executable bench
   main-is: Main.hs
   ghc-options: -Wall -threaded -O2
   default-language: Haskell2010
-  build-depends:      base == 4.*
+  build-depends:      base >=4.7 && <5
                     , aeson
                     , ekg
                     , ekg-core
@@ -62,5 +62,5 @@ executable bench
                     , servant-server
                     , text
                     , wai
-                    , warp >= 3.2.4 && < 3.3
+                    , warp
                     , process
